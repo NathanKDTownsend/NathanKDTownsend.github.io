@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nathan Townsend — Computer Science Graduate</title>
+<title>Nathan Townsend | Computer Science Graduate</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,8 +12,6 @@
     --navy-light: #142c52;
     --amber: #f2a93b;
     --teal: #3ecab0;
-    --paper: #f5f3ee;
-    --grid: rgba(255,255,255,0.06);
     --ink: #dce4f0;
   }
   * { box-sizing: border-box; }
@@ -26,16 +24,14 @@
   }
   .grid-bg {
     background-image:
-      linear-gradient(var(--grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   header {
     padding: 90px 24px 70px;
-    text-align: left;
     max-width: 900px;
     margin: 0 auto;
-    position: relative;
   }
   .tag {
     font-family: 'JetBrains Mono', monospace;
@@ -92,7 +88,7 @@
     font-size: 1.6em;
     color: white;
     margin: 0 0 24px;
-    border-bottom: 1px solid var(--grid);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     padding-bottom: 14px;
   }
   .about-text { max-width: 680px; color: var(--ink); }
@@ -102,7 +98,6 @@
     border-radius: 6px;
     padding: 24px;
     margin-bottom: 18px;
-    position: relative;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
   .project:hover {
@@ -136,6 +131,11 @@
     padding-bottom: 2px;
   }
   .project a:hover { color: white; border-color: white; }
+  .project .note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    color: rgba(220,228,240,0.5);
+  }
   .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -182,17 +182,17 @@
 <body class="grid-bg">
 
 <header>
-  <span class="tag">AVAILABLE FOR HIRE — DUBAI, UAE</span>
+  <span class="tag">AVAILABLE FOR HIRE IN DUBAI, UAE</span>
   <h1>Nathan Townsend</h1>
-  <div class="role">BSc (Hons) Computer Science — First Class Honours</div>
-  <p class="sub">I build across game development, mobile applications, and machine learning. Currently looking for opportunities in software engineering and AI within the UAE tech market.</p>
-  <div class="visa-badge">UAE Property Visa holder — immediately available to work, no employer sponsorship required</div>
+  <div class="role">BSc (Hons) Computer Science, First Class Honours</div>
+  <p class="sub">I build across game development, machine learning, mobile applications and full stack web platforms. Relocating to Dubai and looking for opportunities in software engineering and AI within the UAE tech market.</p>
+  <div class="visa-badge">UAE Property Visa holder: eligible to live and work in the UAE immediately, no employer sponsorship or work permit required</div>
 </header>
 
 <section>
   <div class="section-label">01 / About</div>
   <h2>Background</h2>
-  <p class="about-text">Computer Science graduate from Oryx University, Doha, validated by Liverpool John Moores University (UK), relocating to Dubai. My work spans real-time systems (Unity game logic), applied machine learning (CNN architecture and training pipelines), and cross-platform mobile development (Xamarin). I care about understanding how something works end to end, not just gluing libraries together.</p>
+  <p class="about-text">Computer Science graduate (First Class Honours) from Oryx University, Doha, validated by Liverpool John Moores University, UK. Hands on experience across software development and data driven projects, including a technology externship at Meta. My work spans real time systems, applied machine learning, cross platform mobile development, and full stack web platforms. I care about understanding how something works end to end, not just gluing libraries together, and I'm comfortable working with people from different backgrounds and across teams.</p>
 </section>
 
 <section>
@@ -200,29 +200,28 @@
   <h2>Projects</h2>
 
   <div class="project">
-    <div class="index">PROJECT — 01</div>
+    <div class="index">PROJECT 01</div>
     <h3>NutriGame</h3>
-    <div class="stack">Unity · C#</div>
-    <p>An educational match-3 puzzle game teaching kids aged 6-9 the difference between healthy and junk food, with 25 levels, power-ups, and an in-game quiz system.</p>
+    <div class="stack">Unity, C#</div>
+    <p>An educational match 3 puzzle game teaching kids aged 6 to 9 the difference between healthy and junk food, with 25 levels, power ups, and an in game quiz system.</p>
     <a href="https://github.com/NathanKDTownsend/NutriGame-2D" target="_blank">View source →</a>
   </div>
 
   <div class="project">
-    <div class="index">PROJECT — 02</div>
+    <div class="index">PROJECT 02</div>
     <h3>Facial Expression Recognition System</h3>
-    <div class="stack">Python · TensorFlow/Keras · scikit-learn</div>
-    <p>A CNN with a custom perceptron layer and hand-derived backpropagation rules, tuned via genetic algorithm hyperparameter search across six emotion classes.</p>
+    <div class="stack">Python, TensorFlow/Keras, scikit learn</div>
+    <p>A CNN with a custom perceptron layer and hand derived backpropagation rules, tuned via genetic algorithm hyperparameter search across six emotion classes.</p>
     <a href="https://github.com/NathanKDTownsend/facial-recognition-system" target="_blank">View source →</a>
   </div>
 
   <div class="project">
-    <div class="index">PROJECT — 03</div>
+    <div class="index">PROJECT 03</div>
     <h3>BIDashboard</h3>
-    <div class="stack">Xamarin · C#</div>
-    <p>A cross-platform Business Intelligence dashboard visualizing vehicle sales data through interactive charts, with filtering by year, region, quarter, and quantity.</p>
+    <div class="stack">Xamarin, C#</div>
+    <p>A cross platform Business Intelligence dashboard visualising vehicle sales data through interactive charts, with filtering by year, region, quarter and quantity.</p>
     <a href="https://github.com/NathanKDTownsend/bidashboard-xamarin" target="_blank">View source →</a>
   </div>
-</section>
 
 <section>
   <div class="section-label">03 / Toolkit</div>
@@ -237,6 +236,7 @@
     <span class="pill">Unity</span>
     <span class="pill">TensorFlow / Keras</span>
     <span class="pill">Xamarin</span>
+    <span class="pill">MySQL</span>
     <span class="pill">Linux</span>
     <span class="pill">Git / GitHub</span>
   </div>
@@ -246,8 +246,8 @@
   <div class="section-label">04 / Education</div>
   <h2>Education</h2>
   <div class="edu-item">
-    <div class="school">BSc (Hons) Computer Science — First Class Honours (Class I)</div>
-    <div class="detail">Oryx University, Doha — validated by Liverpool John Moores University, UK</div>
+    <div class="school">BSc (Hons) Computer Science, First Class Honours (Class I)</div>
+    <div class="detail">Oryx University, Doha. Validated by Liverpool John Moores University, UK</div>
     <div class="detail">Studies completed July 2026, official conferral January/February 2027</div>
   </div>
 </section>
@@ -256,9 +256,9 @@
   <div class="section-label">05 / Notable</div>
   <h2>Achievements</h2>
   <ul class="achievements">
-    <li>Technology Externship at Meta — gained direct exposure to enterprise-scale engineering workflows</li>
+    <li>Technology Externship at Meta, gaining direct exposure to enterprise scale engineering workflows</li>
     <li>Founded the university's Social Justice Forum</li>
-    <li>Part of the team behind the university's highest-ever Charity Week fundraising total</li>
+    <li>Part of the team behind the university's highest ever Charity Week fundraising total, over 10,000 QAR raised for children's causes</li>
     <li>Completed a half marathon</li>
   </ul>
 </section>
@@ -274,7 +274,7 @@
 </section>
 
 <footer>
-  © 2026 Nathan Townsend — built and deployed on GitHub Pages
+  © 2026 Nathan Townsend. Built and deployed on GitHub Pages
 </footer>
 
 </body>
