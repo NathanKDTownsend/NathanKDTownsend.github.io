@@ -2,74 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nathan Townsend | Computer Science Graduate</title>
+<title>Nathan Townsend — Computer Science Graduate</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
-  header { background: #1f3864; color: white; padding: 50px 20px; text-align: center; }
-  header h1 { margin: 0; font-size: 2.2em; }
-  header p { margin: 8px 0 0; font-size: 1.1em; color: #cdd6e8; }
-  section { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-  h2 { border-bottom: 2px solid #1f3864; padding-bottom: 8px; }
-  .project { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-  .project h3 { margin-top: 0; }
-  .project a { color: #1f3864; font-weight: bold; text-decoration: none; }
-  .links a { margin-right: 20px; color: #1f3864; font-weight: bold; text-decoration: none; }
-  footer { text-align: center; padding: 20px; color: #777; font-size: 0.9em; }
+  :root {
+    --navy: #0b1e39;
+    --navy-light: #142c52;
+    --amber: #f2a93b;
+    --teal: #3ecab0;
+    --paper: #f5f3ee;
+    --grid: rgba(255,255,255,0.06);
+    --ink: #dce4f0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--navy);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  header {
+    padding: 90px 24px 70px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber);
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--amber);
+    padding: 4px 10px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3em;
+    font-weight: 800;
+    margin: 20px 0 6px;
+    color: white;
+  }
+  header .role {
+    font-size: 1.2em;
+    color: var(--teal);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  header .sub {
+    margin-top: 18px;
+    color: var(--ink);
+    max-width: 640px;
+    font-size: 1.05em;
+  }
+  .visa-badge {
+    margin-top: 22px;
+    display: inline-block;
+    background: var(--navy-light);
+    border-left: 3px solid var(--teal);
+    padding: 10px 16px;
+    font-size: 0.92em;
+    color: var(--ink);
+  }
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 24px;
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber);
+    font-size: 0.8em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6em;
+    color: white;
+    margin: 0 0 24px;
+    border-bottom: 1px solid var(--grid);
+    padding-bottom: 14px;
+  }
+  .about-text { max-width: 680px; color: var(--ink); }
+  .project {
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 18px;
+    position: relative;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .project:hover {
+    border-color: var(--teal);
+    transform: translateY(-2px);
+  }
+  .project .index {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+  }
+  .project h3 {
+    margin: 8px 0 8px;
+    color: white;
+    font-size: 1.25em;
+  }
+  .project p { color: var(--ink); margin: 0 0 14px; }
+  .project .stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78em;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+  .project a {
+    color: var(--amber);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--amber);
+    padding-bottom: 2px;
+  }
+  .project a:hover { color: white; border-color: white; }
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--ink);
+    padding: 7px 14px;
+    border-radius: 4px;
+  }
+  .edu-item { margin-bottom: 18px; }
+  .edu-item .school { color: white; font-weight: 700; }
+  .edu-item .detail { color: var(--ink); font-size: 0.95em; }
+  .achievements li { margin-bottom: 8px; color: var(--ink); }
+  .links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: var(--amber);
+    font-family: 'JetBrains Mono', monospace;
+    text-decoration: none;
+    font-size: 0.95em;
+    border: 1px solid var(--amber);
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .links a:hover { background: var(--amber); color: var(--navy); }
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+  }
 </style>
 </head>
-<body>
+<body class="grid-bg">
 
 <header>
+  <span class="tag">AVAILABLE FOR HIRE — DUBAI, UAE</span>
   <h1>Nathan Townsend</h1>
-  <p>BSc (Hons) Computer Science, First Class Honours &middot; Dubai, UAE</p>
-  <p>UAE Property Visa holder, immediately available to work, no sponsorship required</p>
+  <div class="role">BSc (Hons) Computer Science — First Class Honours</div>
+  <p class="sub">I build across game development, mobile applications, and machine learning. Currently looking for opportunities in software engineering and AI within the UAE tech market.</p>
+  <div class="visa-badge">UAE Property Visa holder — immediately available to work, no employer sponsorship required</div>
 </header>
 
 <section>
-  <h2>About</h2>
-  <p>Computer Science graduate with First Class Honours, relocating to Dubai. I build across game development, mobile apps, and machine learning, and I'm looking for opportunities in software engineering and AI in the UAE tech market.</p>
+  <div class="section-label">01 / About</div>
+  <h2>Background</h2>
+  <p class="about-text">Computer Science graduate from Oryx University, Doha, validated by Liverpool John Moores University (UK), relocating to Dubai. My work spans real-time systems (Unity game logic), applied machine learning (CNN architecture and training pipelines), and cross-platform mobile development (Xamarin). I care about understanding how something works end to end, not just gluing libraries together.</p>
 </section>
 
 <section>
+  <div class="section-label">02 / Work</div>
   <h2>Projects</h2>
 
   <div class="project">
+    <div class="index">PROJECT — 01</div>
     <h3>NutriGame</h3>
-    <p>An educational match-3 puzzle game teaching kids aged 6-9 the difference between healthy and junk food, built in Unity/C#.</p>
-    <a href="https://github.com/NathanKDTownsend/NutriGame-2D" target="_blank">View on GitHub &rarr;</a>
+    <div class="stack">Unity · C#</div>
+    <p>An educational match-3 puzzle game teaching kids aged 6-9 the difference between healthy and junk food, with 25 levels, power-ups, and an in-game quiz system.</p>
+    <a href="https://github.com/NathanKDTownsend/NutriGame-2D" target="_blank">View source →</a>
   </div>
 
   <div class="project">
+    <div class="index">PROJECT — 02</div>
     <h3>Facial Expression Recognition System</h3>
-    <p>A CNN-based facial expression recognition system with a custom perceptron layer and genetic algorithm hyperparameter search, built in Python/Keras.</p>
-    <a href="https://github.com/NathanKDTownsend/facial-recognition-system" target="_blank">View on GitHub &rarr;</a>
+    <div class="stack">Python · TensorFlow/Keras · scikit-learn</div>
+    <p>A CNN with a custom perceptron layer and hand-derived backpropagation rules, tuned via genetic algorithm hyperparameter search across six emotion classes.</p>
+    <a href="https://github.com/NathanKDTownsend/facial-recognition-system" target="_blank">View source →</a>
   </div>
 
   <div class="project">
+    <div class="index">PROJECT — 03</div>
     <h3>BIDashboard</h3>
-    <p>A cross-platform Business Intelligence dashboard visualizing vehicle sales data with interactive charts and filters, built in Xamarin/C#.</p>
-    <a href="https://github.com/NathanKDTownsend/bidashboard-xamarin" target="_blank">View on GitHub &rarr;</a>
+    <div class="stack">Xamarin · C#</div>
+    <p>A cross-platform Business Intelligence dashboard visualizing vehicle sales data through interactive charts, with filtering by year, region, quarter, and quantity.</p>
+    <a href="https://github.com/NathanKDTownsend/bidashboard-xamarin" target="_blank">View source →</a>
   </div>
-
 </section>
 
 <section>
+  <div class="section-label">03 / Toolkit</div>
   <h2>Skills</h2>
-  <p>Python, Java, C++, C#, SQL, HTML, Unity, TensorFlow/Keras, Xamarin, Linux, GitHub</p>
+  <div class="skills-grid">
+    <span class="pill">Python</span>
+    <span class="pill">C#</span>
+    <span class="pill">Java</span>
+    <span class="pill">C++</span>
+    <span class="pill">SQL</span>
+    <span class="pill">HTML</span>
+    <span class="pill">Unity</span>
+    <span class="pill">TensorFlow / Keras</span>
+    <span class="pill">Xamarin</span>
+    <span class="pill">Linux</span>
+    <span class="pill">Git / GitHub</span>
+  </div>
 </section>
 
 <section>
-  <h2>Contact</h2>
+  <div class="section-label">04 / Education</div>
+  <h2>Education</h2>
+  <div class="edu-item">
+    <div class="school">BSc (Hons) Computer Science — First Class Honours (Class I)</div>
+    <div class="detail">Oryx University, Doha — validated by Liverpool John Moores University, UK</div>
+    <div class="detail">Studies completed July 2026, official conferral January/February 2027</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">05 / Notable</div>
+  <h2>Achievements</h2>
+  <ul class="achievements">
+    <li>Technology Externship at Meta — gained direct exposure to enterprise-scale engineering workflows</li>
+    <li>Founded the university's Social Justice Forum</li>
+    <li>Part of the team behind the university's highest-ever Charity Week fundraising total</li>
+    <li>Completed a half marathon</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-label">06 / Contact</div>
+  <h2>Get in touch</h2>
   <div class="links">
     <a href="mailto:nathankdtownsend@gmail.com">Email</a>
-    <a href="#" target="www.linkedin.com/in/nathankdtownsend">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/nathankdtownsend" target="_blank">LinkedIn</a>
     <a href="https://github.com/NathanKDTownsend" target="_blank">GitHub</a>
   </div>
 </section>
 
 <footer>
-  &copy; 2026 Nathan Townsend
+  © 2026 Nathan Townsend — built and deployed on GitHub Pages
 </footer>
 
 </body>
